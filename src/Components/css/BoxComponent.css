@@ -1,0 +1,457 @@
+:root {
+    --primary-text-color: rgb(143, 143, 143);
+    --background-color: rgb(24, 26, 27);
+    --test-color: yellow;
+    --header-height: var(--header-height);
+    /* --main-box-shadow: box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; */
+} 
+
+
+
+.Container {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+
+
+    /* box-sizing: border-box; */
+
+}
+
+.Container * {
+    /* box-sizing: border-box; */
+    /* width: 100%;
+    padding: 0;
+    margin: 0; */
+
+}
+
+
+.flexRow {
+    display: flex;
+    flex-flow: row;
+}
+
+.flexReverseRow {
+    display: flex;
+    flex-flow: row-reverse;
+}
+
+.flexStart {
+    justify-content: flex-start;
+}
+
+.flexEnd {
+    justify-content: flex-end;
+}
+
+.fullHeight {
+    height: 100%;
+}
+
+
+
+
+.fullScreen {
+    width: 100%;
+    height: 100%;
+    /* border-radius: 0; */
+}
+
+.centerScreen {}
+
+/* .topRightScreen {
+    position: absolute;
+
+} */
+
+
+.component {
+    /*   border: 2px solid var(--primary-text-color); */
+    background-color: var(--background-color);
+    /* border-radius: 10px; */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /* padding: 20px;   */
+    /* max-height: calc(100vh - 210px); */
+    /* max-height: 100%; */
+    /* overflow-y: auto; */
+}
+
+.component * {
+    /*   border: 2px solid var(--primary-text-color); */
+    font-size: 30px;
+    /* margin: 0; */
+    color: var(main-color);
+    font-size: 25px;
+
+    /* border-radius: 10px; */
+    /*   width: 300px; */
+    /*   height: 10px; */
+    /* border: solid red 1px; */
+
+}
+
+.roundedEdges {
+    border-radius: 10px;
+}
+
+
+.padded {
+    padding: 20px;
+}
+
+
+.margin {
+    margin: 20px;
+}
+
+
+
+/* .Container a {
+    text-decoration: none;
+    color: red;
+    border: solid red 2px;
+    padding: 0 8px;
+} */
+
+
+/*For the <div> tag around the <User /> component*/
+.userDiv {
+    /* position: sticky; */
+    width: 30vh;
+    /* border-right: solid rgb(159, 226, 191) 5px; */
+    height: 100%;
+    /* width: 100% */
+    /* top: var(--header-height); */
+}
+
+
+.header {
+    /* position: sticky; */
+    top: 0;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    /* flex-wrap: wrap; */
+    width: 100%;
+    background: var(--background-color);
+    /* justify-content: space-between;
+    align-items: center; */
+    height: var(--header-height);
+    box-sizing: content-box;
+
+}
+
+
+.header h3 {
+
+    color: var(--primary-text-color);
+}
+
+.navbox {
+    position: relative;
+    
+}
+
+.buttonList {
+    display: flex;
+    /* flex-flow: row; */
+    justify-content: left;
+    flex-wrap: wrap;
+    align-items: center;
+    position: absolute;
+}
+
+.row {
+    flex-flow: row;
+}
+
+.col {
+    flex-flow: column;
+}
+
+.header div {
+    /* padding: 20px 5vh; */
+}
+
+
+
+
+
+.tintedBackground {
+    background: rgba(0, 0, 0, 0.2);
+
+
+}
+
+
+
+
+/*For the <div> tag around the <Chat /> component*/
+.chatDiv {
+    /* border-right: solid rgb(159, 226, 191) 5px; */
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.Column {
+    display: flex;
+    flex-flow: column;
+}
+
+
+.positionAbsolute {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.positionRelative {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.absoluteCenter {
+    position: absolute;
+    /* align-self: center; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h1 {
+    /* Make the text pretty   */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    letter-spacing: -1.4px;
+    word-spacing: 2.2px;
+    color: var(--primary-text-color);
+    font-weight: 700;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: uppercase;
+    /* display: inline; */
+}
+
+
+/* Primary Button */
+.primaryBtn {
+    background: #e62143;
+    border-radius: 11px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    font-family: Mija, -apple-system, BlinkMacSystemFont, Roboto, "Roboto Slab", "Droid Serif", "Segoe UI", system-ui, Arial, sans-serif;
+    font-size: 1em;
+    font-weight: 500;
+    justify-content: center;
+    line-height: 33.4929px;
+    padding: .8em 1em;
+    text-align: center;
+    text-decoration: none;
+    text-decoration-skip-ink: auto;
+    text-shadow: rgba(0, 0, 0, .3) 1px 1px 1px;
+    text-underline-offset: 1px;
+    transition: all .2s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 100%;
+    border: 0;
+}
+
+.primaryBtn:active,
+.primaryBtn:focus {
+    border-bottom-style: none;
+    border-color: #dadada;
+    box-shadow: rgba(0, 0, 0, .3) 0 3px 3px inset;
+    outline: 0;
+}
+
+.primaryBtn:hover {
+    border-bottom-style: none;
+    border-color: #dadada;
+    background-color: #cf2743;
+}
+
+
+
+/* Secondary Button */
+.secondaryBtn {
+    align-items: center;
+    background-color: var(--background-color);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: .25rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    box-sizing: border-box;
+    color: rgba(196, 196, 196, 0.85);
+    cursor: pointer;
+    display: inline-flex;
+    font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 1.25;
+    margin: 0;
+    min-height: 3rem;
+    padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+    position: relative;
+    text-decoration: none;
+    transition: all 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    /* width: auto; */
+}
+
+
+.secondaryBtn:hover {
+    transform: translateY(-1px);
+}
+
+.secondaryBtn:active {
+    background-color: #F0F0F1;
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+    color: rgba(0, 0, 0, 0.65);
+    transform: translateY(0);
+}
+
+
+.fullWidth {
+    width: 100%;
+}
+
+.largeBtn {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.smallBtn {
+    width: auto;
+    /* margin-top: 10px; */
+    padding: 10px;
+}
+
+
+
+
+
+input {
+    color: var(--primary-text-color);
+    display: flex;
+    justify-content: left;
+    padding: 10px;
+}
+
+
+.userList {
+    list-style-type: square;
+    color: var(--primary-text-color);
+    /* color: red; */
+}
+
+
+
+
+
+
+
+
+
+
+
+/* <Chat /> */
+.smallDiv {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 300px;
+}
+
+.messageInputArea {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2vh;
+    padding-top: 2vh;
+}
+
+.messageInputArea * {
+    /* margin: 5px; */
+}
+
+.messageInput {
+    max-height: 20vh;
+    min-height: 4vh;
+    width: 100%;
+    resize: none;
+    color: var(--primary-text-color);
+    background-color: rgb(56, 61, 63);
+}
+
+.messageList {
+    list-style-type: none;
+    color: var(--primary-text-color);
+    display: flex;
+    flex-flow: column-reverse;
+    /* padding: 8px; */
+
+    overflow-y: auto; 
+    /* max-height: 200px; */
+    /* height: 100%; */
+    /* temporary solution to too many messages 'max-height' */
+}
+
+.colReverse {
+    display: flex;
+    flex-flow: column-reverse;
+    overflow-y: auto; 
+}
+
+
+.messageListb {
+    list-style-type: none;
+    color: var(--primary-text-color);
+    display: flex;
+    flex-flow: column;
+    /* padding: 8px; */
+
+    overflow-y: auto; 
+}
+
+.messageList * {
+    margin: 0 8px;
+}
+
+.messageList li:last-child {
+    color: var(--primary-text-color);
+}
+
+
+.scrollOverflow {
+    overflow-y: auto;
+}
+
+/* .noScrollOverflow {
+    overflow-y: ;
+} */
+
+
+.messageLi {
+    /* box-shadow: var(--main-box-shadow); */
+}
+

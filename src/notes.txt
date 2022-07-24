@@ -1,0 +1,9 @@
+// note 6/11/2022 - Toby Martiny - This application is incomplete. 
+// Description: This application lets a user post messages into a log, log in, make an account, and see other users.
+// These features are functional on their own, but don't work to well together. I couldn't make the user stay logged in
+// accross the different pages and the messages aren't being saved (they get reset on refreshing the page). The 
+// reason I stopped with this app is because I don't know how I should make the entire website know that a user is logged in. 
+// passing callback functions between components seems like bad practice. I may come back to this or copy from it in
+// future projects but it will be on the shelf for the time being. 
+// This app has helped me make a lot of progress on understanding api's, the back end, and tying react and a server
+// together. PS: I'm pretty happy with how the css looks
