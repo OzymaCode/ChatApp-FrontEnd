@@ -64,7 +64,7 @@ const Chat = (props) => {
   const fillMessages = async () => {
     // fill messages array with messages stored in database
     try {
-      await fetch('/users/post', {
+      await fetch('https://chatapp-backend-b.herokuapp.com/users/post', {
         method: 'get',
         headers: {
           'Content-type': 'application/json',
@@ -132,13 +132,16 @@ const Chat = (props) => {
 
     document.getElementById('messageInput').value = ''
 
-    let result = await fetch('/users/post', {
-      method: 'post',
-      headers: {
-        'Content-type': 'application/json',
+    let result = await fetch(
+      'https://chatapp-backend-b.herokuapp.com/users/post',
+      {
+        method: 'post',
+        headers: {
+          'Content-type': 'application/json',
+        },
+        body: messageJson,
       },
-      body: messageJson,
-    })
+    )
       .then((res) => {
         return res.json()
       })
