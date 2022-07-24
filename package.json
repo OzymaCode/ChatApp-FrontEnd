@@ -38,5 +38,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://chatapp-backend-a.herokuapp.com/"
+  "proxy": "https://chatapp-backend-b.herokuapp.com/"
 }

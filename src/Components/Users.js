@@ -119,7 +119,7 @@ const Users = (props) => {
         <div className="">
           <h1 style={{ margin: '20px' }}>Users:</h1>
           <div className="flexRow ">
-            <button
+            {/* <button
               className="secondaryBtn"
               id="clearUsersBtn"
               onClick={() => {
@@ -127,7 +127,7 @@ const Users = (props) => {
               }}
             >
               Clear Users
-            </button>
+            </button> */}
             <button
               className="secondaryBtn"
               onClick={() => {
