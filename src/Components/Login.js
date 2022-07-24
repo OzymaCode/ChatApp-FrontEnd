@@ -1,5 +1,5 @@
-import './css/BoxComponent.css';
-import React, { createRef, useEffect } from 'react';
+import './css/BoxComponent.css'
+import React, { createRef, useEffect } from 'react'
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   * Component			  Login()
@@ -14,12 +14,8 @@ import React, { createRef, useEffect } from 'react';
   * @see          ./css/BoxComponent.css
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 const Login = (props) => {
-
-  let usernameInput = createRef();
-  let passwordInput = createRef();
-
-
-
+  let usernameInput = createRef()
+  let passwordInput = createRef()
 
   /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
     * EventListener	    []
@@ -29,10 +25,9 @@ const Login = (props) => {
     * History           6/14/2022
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   useEffect(() => {
-    let messageInputArea = document.getElementById("loginUsernameInput")
+    let messageInputArea = document.getElementById('loginUsernameInput')
     messageInputArea.focus()
   }, [])
-
 
   /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     * EventListener	    keypress
@@ -41,20 +36,24 @@ const Login = (props) => {
     * Date			    6/15/2022
     * History           6/14/2022
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-  document.addEventListener("keypress", (e) => {   // on key press
-    if (e.key === "Enter") {
-      if (document.activeElement === document.getElementById("loginUsernameInput")) {
-        document.getElementById("loginPasswordInput").focus();
-      } else if (document.activeElement === document.getElementById("loginPasswordInput")) {
-        document.getElementById("loginSubmitBtn").click();
+  document.addEventListener('keypress', (e) => {
+    // on key press
+    if (e.key === 'Enter') {
+      if (
+        document.activeElement === document.getElementById('loginUsernameInput')
+      ) {
+        document.getElementById('loginPasswordInput').focus()
+      } else if (
+        document.activeElement === document.getElementById('loginPasswordInput')
+      ) {
+        document.getElementById('loginSubmitBtn').click()
       }
-    } 
+    }
     // else if (e.key === "Escape") {
     //   console.log('exscape')
     //   document.getElementById("loginExitBtn").click();
     // }
   })
-
 
   /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   * Method			  loginUser()
@@ -65,42 +64,45 @@ const Login = (props) => {
   * Date			    6/13/2022
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   let loginUser = async () => {
-    let user = JSON.stringify({               // put the user information in json format
+    let user = JSON.stringify({
+      // put the user information in json format
       username: usernameInput.current.value,
-      password: passwordInput.current.value
+      password: passwordInput.current.value,
     })
 
-    let result = await fetch('/users/login', {    // sends request to server with the user
-      method: 'post',
-      headers: {
-        'Content-type': 'application/json',
+    let result = await fetch(
+      'https://chatapp-backend-a.herokuapp.com/users/login',
+      {
+        // sends request to server with the user
+        method: 'post',
+        headers: {
+          'Content-type': 'application/json',
+        },
+        body: user,
       },
-      body: user
-    }).then(res => res.json())
-
-
+    ).then((res) => res.json())
 
     switch (result.statusCode) {
       case 1: // if successful, return to home page
-        props.sendUserLoginInfo({ username: usernameInput.current.value, isLoggedOn: true });    // tell main page that the user is logged in
-        props.closeComponent('login');     // close login form
-        break;
-      case 0: 
+        props.sendUserLoginInfo({
+          username: usernameInput.current.value,
+          isLoggedOn: true,
+        }) // tell main page that the user is logged in
+        props.closeComponent('login') // close login form
+        break
+      case 0:
         // document.getElementById('title').innerText = "Login"
-        alert("Incorrect Password");
-        break;
+        alert('Incorrect Password')
+        break
       case -1:
-        alert("User Not Found");
-        break;
+        alert('User Not Found')
+        break
     }
 
-
-
-
-    if (result.statusCode == 1) {   // if successful, return to home page
-      console.log("<Login />: user logged in")
-      
-    } 
+    if (result.statusCode == 1) {
+      // if successful, return to home page
+      console.log('<Login />: user logged in')
+    }
   }
 
   return (
@@ -109,17 +111,53 @@ const Login = (props) => {
         <div className="header">
           <h1 id="title">Login</h1>
           <div>
-            <button className="secondaryBtn" tabIndex='0' id="loginExitBtn" onClick={() => { props.closeComponent('login') }}>X</button>
+            <button
+              className="secondaryBtn"
+              tabIndex="0"
+              id="loginExitBtn"
+              onClick={() => {
+                props.closeComponent('login')
+              }}
+            >
+              X
+            </button>
           </div>
         </div>
 
         <br />
-        <input type="text" className="username roundedEdges" tabIndex='0' name="username" placeholder="Username" id='loginUsernameInput' ref={usernameInput} /><br />
-        <input type="text" className="password roundedEdges" tabIndex='0' name="password" placeholder="Password" id='loginPasswordInput' ref={passwordInput} /><br />
-        <button className="largeBtn primaryBtn" tabIndex='0' id="loginSubmitBtn" onClick={() => { loginUser() }}>Login In</button>
+        <input
+          type="text"
+          className="username roundedEdges"
+          tabIndex="0"
+          name="username"
+          placeholder="Username"
+          id="loginUsernameInput"
+          ref={usernameInput}
+        />
+        <br />
+        <input
+          type="text"
+          className="password roundedEdges"
+          tabIndex="0"
+          name="password"
+          placeholder="Password"
+          id="loginPasswordInput"
+          ref={passwordInput}
+        />
+        <br />
+        <button
+          className="largeBtn primaryBtn"
+          tabIndex="0"
+          id="loginSubmitBtn"
+          onClick={() => {
+            loginUser()
+          }}
+        >
+          Login In
+        </button>
       </div>
     </div>
   )
 }
 
-export default Login;
+export default Login
