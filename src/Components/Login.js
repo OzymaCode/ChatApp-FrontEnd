@@ -70,14 +70,17 @@ const Login = (props) => {
       password: passwordInput.current.value,
     })
 
-    let result = await fetch('/users/login', {
-      // sends request to server with the user
-      method: 'post',
-      headers: {
-        'Content-type': 'application/json',
+    let result = await fetch(
+      'https://chatapp-backend-c.herokuapp.com/users/login',
+      {
+        // sends request to server with the user
+        method: 'post',
+        headers: {
+          'Content-type': 'application/json',
+        },
+        body: user,
       },
-      body: user,
-    }).then((res) => res.json())
+    ).then((res) => res.json())
 
     switch (result.statusCode) {
       case 1: // if successful, return to home page

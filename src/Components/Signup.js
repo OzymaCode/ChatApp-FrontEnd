@@ -73,13 +73,16 @@ const Signup = (props) => {
 
       console.log('a')
       // Send user to server
-      let result = await fetch('/users/signup', {
-        method: 'post',
-        headers: {
-          'Content-type': 'application/json',
+      let result = await fetch(
+        'https://chatapp-backend-c.herokuapp.com/users/signup',
+        {
+          method: 'post',
+          headers: {
+            'Content-type': 'application/json',
+          },
+          body: user,
         },
-        body: user,
-      }).then((res) => {
+      ).then((res) => {
         return res.json()
       })
 
