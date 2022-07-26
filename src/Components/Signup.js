@@ -74,7 +74,7 @@ const Signup = (props) => {
       console.log('a')
       // Send user to server
       let result = await fetch(
-        'https://chatapp-backend-c.herokuapp.com/users/signup',
+        'https://chatapp-backend-d.herokuapp.com/users/signup',
         {
           method: 'post',
           headers: {
@@ -86,7 +86,7 @@ const Signup = (props) => {
         return res.json()
       })
 
-      console.log(result)
+      // console.log(result)
 
       // console.log(result)
 
@@ -97,7 +97,7 @@ const Signup = (props) => {
         }) // tell main page that the user is logged in/signed up
         props.closeComponent('signup') // close signup form
       } else {
-        alert('User already exists')
+        // alert('User already exists')
       }
     }
   }

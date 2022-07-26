@@ -71,7 +71,7 @@ const Login = (props) => {
     })
 
     let result = await fetch(
-      'https://chatapp-backend-c.herokuapp.com/users/login',
+      'https://chatapp-backend-d.herokuapp.com/users/login',
       {
         // sends request to server with the user
         method: 'post',
