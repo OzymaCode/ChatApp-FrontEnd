@@ -68,9 +68,7 @@ const Users = (props) => {
     * Date	        6/13/2022
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   const getUsers = async () => {
-    const res = await fetch(
-      'https://chatapp-backend-b.herokuapp.com/users',
-    ).then((res) => res.json())
+    const res = await fetch('/users').then((res) => res.json())
 
     const resMap = await res.map((user) => {
       return user.username
@@ -106,7 +104,7 @@ const Users = (props) => {
     * @return       formattedUsers tags
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   const clearUsers = async () => {
-    let res = await fetch('https://chatapp-backend-b.herokuapp.com/clear')
+    let res = await fetch('/clear')
     getUsers()
   }
 
